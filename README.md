@@ -10,7 +10,7 @@ going to this link: https://www.virtualbox.org/wiki/Downloads.
 To use the VM, clone the base image repository by running the following command
 
 ```
-git clone <link_to_repo>
+git clone https://github.com/CSCI-UA0480-009/base-image.git
 ```
 
 Go to the new cloned directory and run the following command
