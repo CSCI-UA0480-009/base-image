@@ -69,11 +69,14 @@ Vagrant.configure("2") do |config|
     apt-get update
     export DEBIAN_FRONTEND=noninteractive
     
-    apt-get install build-essential
+    apt-get -y install build-essential
     apt-get -y install vim git net-tools wireshark wireshark-gtk
 
     apt-get -y install python3 python3-pip python3-matplotlib
+    apt-get -y install python3-scipy
     apt-get -y install mahimahi 
+    apt-get -y install traceroute
+
     sysctl -w net.ipv4.ip_forward=1
 
   SHELL
