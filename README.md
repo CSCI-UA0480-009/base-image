@@ -25,7 +25,9 @@ Go to the new cloned directory and run the following command
 vagrant up
 ```
 
-This should bring up VirtualBox with the base image running within it.
+This should bring up VirtualBox with the base image running within it. All
+Vagrant commands should be run from the same directory that has Vagrantfile. In
+this case base-image folder.
 
 When you are not using the VM, you can either suspend or halt the VM
 
