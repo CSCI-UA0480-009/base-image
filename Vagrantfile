@@ -13,7 +13,6 @@ Vagrant.configure("2") do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
     config.vm.box = "peru/ubuntu-18.04-desktop-amd64"
-    config.vm.box_version = "20180907.01"
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
@@ -52,12 +51,12 @@ Vagrant.configure("2") do |config|
   config.vm.provider "virtualbox" do |vb|
     # Display the VirtualBox GUI when booting the machine
     vb.gui = true
-  
+
     # Customize the amount of memory on the VM:
     vb.memory = 2048
     vb.cpus = 2
   end
-  
+
   # View the documentation for the provider you are using for more
   # information on available options.
 
@@ -68,13 +67,13 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
     export DEBIAN_FRONTEND=noninteractive
-    
+
     apt-get -y install build-essential
     apt-get -y install vim git net-tools wireshark wireshark-gtk
 
     apt-get -y install python3 python3-pip python3-matplotlib
     apt-get -y install python3-scipy
-    apt-get -y install mahimahi 
+    apt-get -y install mahimahi
     apt-get -y install traceroute
 
     sysctl -w net.ipv4.ip_forward=1
