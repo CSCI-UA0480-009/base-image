@@ -64,6 +64,8 @@ Vagrant.configure("2") do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
 
+  config.vm.provision "file", source: "./sysctl.conf", destination: "/tmp/sysctl.conf"
+
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
     export DEBIAN_FRONTEND=noninteractive
@@ -75,8 +77,11 @@ Vagrant.configure("2") do |config|
     apt-get -y install python3-scipy
     apt-get -y install mahimahi
     apt-get -y install traceroute
-
+    
+    cp /tmp/sysctl.conf /etc/sysctl.conf
+    rm /tmp/sysctl.conf
     sysctl -w net.ipv4.ip_forward=1
 
   SHELL
+
 end
